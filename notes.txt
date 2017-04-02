@@ -1,0 +1,75 @@
+### To start with git and create a repository, you need to create an empty
+### directory and then you need to create your repository.
+
+mkdir test
+cd test
+git init
+
+### After once your create the repository, you can check the status of the repo.
+git status
+
+### If you want to add files to the repo and commit them, Copy the files to 
+### the direcotory.
+
+cp /etc/host* test/
+
+git status
+git add *
+git commit -m " This is for testing "
+
+git status
+
+### If you want to delete any files from the repository 
+
+rm -rf hosts
+
+git status
+
+git rm hosts
+
+git commit -m " Removed hosts files from the repository "
+
+### If you have hell lot of files in your direcotory and you want to ignore
+### some files from those list of files. Create a .gitignore file
+
+vim .gitignore
+
+then 
+
+add, hosts files to it and save and close.
+
+now do git add and git commit.
+
+### Cloning local repository
+### Create a new direcotyr where you want to close.
+
+git clone /root/mydir /root/new_direcotory
+
+### If you do any changes on the cloned repo and want to see the same changes on the master repo, then go to master repo.
+
+git pull /root/new_directory
+git commit
+
+Then go back to the /root/new_directory
+
+git push
+
+git status
+
+### Create Branches
+
+git checkout -b development
+
+git status
+
+git branch -a
+
+### Mearging branching to master, Always make sure if you create a mearge out of a mearge, you need to merge the branch branch to branch and then mearge to the master 
+
+Make sure your are in master.
+
+git merge develop --no-ff
+
+--no-ff : This is used so that all the commits which were performed in development are saved and used for historical purposes.
+
+
