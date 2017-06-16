@@ -1,0 +1,53 @@
+#install the virtualenv package before creating the our virtual envirnment 
+pip install virtualenv
+
+#to list installed packages in Global environent
+pip list 
+
+mkdir Environment 
+cd Environment
+
+#To create virtual environment
+
+virtualenv mypython2.6
+
+#To Activate
+
+source mypython2.6/bin/activate
+which python
+pip list
+
+#To install packages in virtual environment
+
+pip install numpy
+pip install pytz
+
+pip list
+
+#Get access to the global site-packages modules to the virtual environment.
+
+rm venv/lib/python3.4/no-global-site-packages.txt
+
+#to bring back the global access
+
+touch venv/lib/python3.4/no-global-site-packages.txt
+
+#Gives access to the global site-packages modules to the virtual environment.
+
+virtualenv myenv --system-site-packages
+
+#You can also use the Python interpreter of your choice (like python2.7).
+
+$ virtualenv -p /usr/bin/python2.7 my_project
+or change the interpreter globally with an env variable in ~/.bashrc:
+
+$ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+
+#To Freeze
+pip freeze > requirements.txt
+
+#if you need to re-create the environment
+
+pip install -r requirements.txt
+
+
